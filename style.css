@@ -1,0 +1,345 @@
+body {
+  font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-Serif;
+  margin: 0 0;
+  padding: 0;
+}
+
+* {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+#user {
+  position: absolute;
+  margin-top: -80px;
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+
+#user input:focus {
+  outline: none;
+}
+
+#user input {
+  padding: 1px 1px 1px 40px;
+  transition: border 0.3s, box-shadow 0.3s;
+  border-radius: 5px;
+  border: 1px solid rgb(206, 204, 204);
+}
+
+#user input:focus {
+  box-shadow: 0px 0px 5px dodgerblue;
+  border-radius: 5px;
+}
+
+#user input:blur {
+  box-shadow: none;
+}
+
+.container {
+  margin-top: 250px;
+  height: auto;
+  font-size: 30px;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  background: rgb(245, 244, 244);
+}
+
+label {
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+@keyframes move {
+  from {
+    color: rgb(113, 164, 216);
+    transform: translate(0px, 5px);
+  }
+
+  to {
+    color: rgb(243, 187, 82);
+  }
+}
+
+.logo-text {
+  font-size: 30px;
+  color: rgb(84, 101, 116);
+}
+
+.logo {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  transform: translate(-5%);
+}
+
+img {
+  width: 70px;
+  vertical-align: middle;
+}
+
+h6 {
+  text-align: end;
+  margin-top: -5%;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgb(156, 154, 154);
+}
+
+table {
+  position: absolute;
+  top: 50%;
+  /* text-align: center; */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+th {
+  border: none;
+  border-bottom: none;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+tr {
+  border: none;
+}
+
+.names {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.switch {
+  /* left: 50%; */
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  transform: translate(-50%, -90%);
+}
+
+.dark-mode {
+  background-color: #1D1E22;
+  color: white;
+}
+
+.input-dark-mode {
+  color: white;
+  background-color: #444857 !important;
+}
+
+.text-dark-mode {
+  color: black;
+}
+
+.input-dark-mode:focus {
+  box-shadow: 0px 0px 5px rgb(195, 192, 192) !important;
+}
+
+.switch label input[type=checkbox]:checked+.lever {
+  background-color: dodgerblue;
+}
+
+.switch label input[type=checkbox]:checked+.lever:after {
+  background-color: rgb(97, 175, 253);
+}
+
+/* PROFILE */
+
+.sidenav,
+.sidenav::after,
+.sidenav::before {
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-app-region: no-drag;
+  cursor: default;
+}
+
+.sidenav-trigger i {
+  position: absolute;
+  top: 2% !important;
+  /* text-indent: 5px; */
+  right: 2%;
+  font-size: 40px;
+  color: #4f5364;
+  /* text-shadow: 0px 0px 7px rgb(155, 152, 152); */
+}
+
+.background {
+  background: linear-gradient(-45deg, #FAA148, #e73c7e, #23a6d5, #0af3bd);
+  animation: grad 15s ease infinite;
+  background-size: 400%;
+}
+
+@keyframes grad {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.name {
+  font-size: 20px !important;
+}
+
+.user-view a {
+  color: white !important;
+}
+
+.user-view {
+  text-align: center;
+  display: block;
+}
+
+.user-view img {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sidenav p::selection {
+  background-color: #1A73E8 !important;
+  color: whitesmoke !important;
+}
+
+.icons {
+  font-size: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  position: fixed;
+  color: #777;
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.3));
+}
+
+.sidenav .icon-group {
+  position: absolute;
+  bottom: 8% !important;
+  padding-top: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.git:hover {
+  color: #211F1F;
+}
+
+.stack:hover {
+  color: #F47F24;
+}
+
+.fb:hover {
+  color: #4267B2;
+}
+
+.email:hover {
+  color: #D44638;
+}
+
+.wp:hover {
+  color: #4FCE5D;
+}
+
+.pen:hover {
+  color: #211F1F;
+}
+
+.links {
+  width: 0px;
+  float: left;
+  padding: 0 !important;
+  margin-right: 50px !important;
+  bottom: 0 !important;
+  height: 0px;
+}
+
+.aim {
+  width: 20px;
+  color: red;
+  vertical-align: text-bottom;
+  margin-right: 3px;
+}
+
+.aim-text {
+  display: inline;
+}
+
+.sidenav .aim-group {
+  line-height: 1.3;
+  padding: 10px;
+  /* padding-right: 15px !important; */
+  font-weight: 400;
+  font-family: "Segoe UI", "Fira Sans", sans-serif;
+}
+
+.carousel .carousel-item {
+  width: 100px !important;
+}
+
+.images .carousel {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 30%;
+  position: absolute;
+}
+
+.sidenav li .project {
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.sidenav .icon-group .bottom-text {
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* PROFILE */
+
+/* CARDS */
+.cards-container{
+  position: absolute;
+  /* bottom: 0% !important; */
+  top: 100% !important;
+  margin-bottom: 5% !important;
+}
+
+.card{
+  width: 30vw;
+  float: left;
+  margin-right: 10px;
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  margin-bottom: 5%;
+}
+.future-time,.future-temp,.future-desp{
+  color: #0af3bd;
+  font-weight: 600;
+}
+.futureValues{
+  color: whitesmoke;
+  font-weight: 500;
+}
+.weather-heading{
+  color: #777;
+  text-align: center !important;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+/* CARDS */

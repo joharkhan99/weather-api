@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title> Weather App | search weather for your city </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="shortcut icon" href="weather.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- PROFILE -->
+
+  <ul id="slide-out" class="sidenav">
+    <li>
+      <div class="user-view">
+        <div class="background">
+        </div>
+        <img class="circle" src="me 2.png">
+        <a><span class="white-text name">Johar Khan</span></a>
+        <a><span class="white-text email"><em>Web Dev</em></span></a>
+      </div>
+    </li>
+    <li class="aim-group"><img src="aim 2.png" class="aim" alt="">
+      <p class="aim-text">Hard-working individual with proficiency in HTML, JavaScript and CSS, as well as ability to
+        communicate effectively in a team setting.
+      <p>
+    </li>
+    <li>
+      <a class="project tooltipped" data-tooltip="Slide below images left or right" data-position="top"><img
+          src="project.png" alt="" class="aim"> Projects</a></li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li class="images">
+      <div class="carousel">
+        <a class="carousel-item" href="https://tours-project.herokuapp.com/" target="_blank"><img
+            src="https://michaeljamie.github.io/advanced-css-sass-less-course/Natours/img/Natours-Logo-green.png"
+            class="tooltipped" data-tooltip="Tours Project" data-position="top"></a>
+        <a class="carousel-item" href="https://omni-food-simple-project.herokuapp.com/" target="_blank"><img
+            src="https://www.ianposton.com/omnifood/resources/img/logo.png" class="tooltipped"
+            data-tooltip="Omni Food Site" data-position="top"></a>
+        <a class="carousel-item" href="https://budget-app-proj.herokuapp.com/" target="_blank"><img src="budget.png" class="tooltipped" data-tooltip="Budget App"
+            data-position="top"></a>
+        <a class="carousel-item" href="https://weather-api-proj.herokuapp.com/" target="_blank"><img src="weather.png" class="tooltipped" data-tooltip="Weather API"
+            data-position="top"></a>
+      </div>
+    </li>
+    <li class="icon-group">
+      <!-- <i class="material-icons icons">delete</i> -->
+      <a href="https://github.com/single-byte" target="_blank" class='links'>
+        <ion-icon name="logo-github" class="icons git tooltipped" data-tooltip="Github" data-position="top"></ion-icon>
+      </a>
+
+      <a href="https://stackoverflow.com/users/13256774/single-byte" target="_blank" class='links'>
+        <ion-icon name="logo-stackoverflow" class="icons stack tooltipped" data-tooltip="Stack Overflow"
+          data-position="top"></ion-icon>
+      </a>
+
+      <a href="https://www.facebook.com/johar.khan.16547" class="links" target="_blank">
+        <ion-icon name="logo-facebook" class="icons fb tooltipped" data-tooltip="Facebook" data-position="top">
+        </ion-icon>
+      </a>
+
+      <a href="#" class="links" target="_blank">
+        <ion-icon name="at-circle" class="icons email tooltipped" data-tooltip="joharkhan1999@gmail.com"
+          data-position="top"></ion-icon>
+      </a>
+      <a href="#" class="links" target="_blank">
+        <ion-icon name="logo-whatsapp" class="icons wp tooltipped" data-tooltip="+92 311 8885245" data-position="top">
+        </ion-icon>
+      </a>
+      <a href="https://codepen.io/Single-Byte" class="links" target="_blank">
+        <ion-icon name="logo-codepen" class="pen icons tooltipped" data-tooltip="CodePen" data-position="top">
+        </ion-icon>
+      </a>
+      <p class="bottom-text">
+        <ion-icon name="code-slash" class="aim"></ion-icon><em>with</em>
+        <ion-icon name="heart" class="aim"></ion-icon><em>by</em> <em>Johar Khan</em>
+      </p>
+    </li>
+  </ul>
+  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+  <!-- PROFILE -->
+
+  <div class="logo">
+    <img src="bg removed.gif" alt="">
+    <label class="logo-text">WEATHER API</label>
+    <h6>small and simple</h6>
+  </div>
+
+  <table class="highlight centered">
+    <thead>
+      <th>
+        <div id="user">
+          <input type="text" placeholder="Enter Your City" id="user-input" onblur="call()" oninput="call()">
+        </div>
+      </th>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="names">City</td>
+        <td><span class="city-name">XXX</span></td>
+      </tr>
+      <tr>
+        <td class="names">Country</td>
+        <td><span class="country-name">XXX</span></td>
+      </tr>
+      <tr>
+        <td class="names">Temperature</td>
+        <td><span class="temp">00</span>&deg;C / <span class="faren temp">00</span>&deg;F </td>
+      </tr>
+      <tr>
+        <td class="names">Description</td>
+        <td><span class="weather">XXX</span></td>
+      </tr>
+      <tr>
+        <td class="names">Time</td>
+        <td><span class="time">00:00:00</span></td>
+      </tr>
+
+      
+    </tbody>
+  </table>
+
+  <!--TEST  -->
+  <div class="row">
+  <div class="cards-container">
+    <h3 class="weather-heading">Future Weather</h3>
+
+  </div>
+  </div>
+
+
+
+<!--  -->
+
+  <!-- DARK MODE -->
+  <div class="switch">
+    <label>
+      Light-Mode
+      <input type="checkbox" onclick="theme()" checked>
+      <span class="lever"></span>
+      Dark-Mode
+    </label>
+  </div>
+
+  <script>
+    $('body').toggleClass('dark-mode');
+    $('#user input').toggleClass('input-dark-mode');
+    function theme() {
+      $('body').toggleClass('dark-mode');
+      $('#user input').toggleClass('input-dark-mode');
+      $('.aim-text, .bottom-text').toggleClass('text-dark-mode');
+    };
+    document.addEventListener('contextmenu', event => event.preventDefault());
+  </script>
+  <!--for materlize-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

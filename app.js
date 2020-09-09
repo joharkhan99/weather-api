@@ -249,6 +249,12 @@ count.set("ZA", "South Africa");
 count.set("ZM", "Zambia");
 count.set("ZW", "Zimbabwe");
 
+//////////////////////////////////////////////////////////////
+//..............MAKING AJAX CALLS WITH FETCH FOR SOME DATA
+//kel to cel formula (kelvin - 273.15)
+//var temp=data['main']['temp'] temoerat
+//
+//$("input").css({"border-color":"rgb(235, 232, 232)",'box-shadow': 'none'});
 
 window.setTimeout(() => { }, 2000);
 
@@ -287,17 +293,20 @@ async function call() {
             $('.city-name').html(city);
             $(".weather").html(res['weather'][0]['description']);
             $('.country-name').html(count.get(country));
-            console.log(res);
+            // console.log(res);
 
-            let res2 = await (await fetch(`https://community-open-weather-map.p.rapidapi.com/forecast?q=${city}`, {
+            let res2 = await (await fetch(`https://community-open-weather-map.p.rapidapi.com/forecast?q=${ctiy}`
+            , {
               "method": "GET",
               "headers": {
                 "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
                 "x-rapidapi-key": "5730203037msh02300bf052bc32bp160c31jsnc228e6a008bd"
               }
-            })).json();
+            }
+            )).json();
 
-      let futureWeather = res2['list'];
+      let futureWeather = res2.list;
+      // console.log(futureWeather);
       futureWeather.forEach((val, indx) => {
         let futureDate = val['dt_txt'].split(" ")[0];
         let futureTime = val['dt_txt'].split(" ")[1];
@@ -330,6 +339,7 @@ async function call() {
       });
     }
     catch (error) {
+      $('.cards-container').append("<h5 style='color:red;text-align:center'>NOT RESPONDING</h5>");
       console.log("error", error);
     };
   }
@@ -337,4 +347,4 @@ async function call() {
 call(); //call the above func
 
 
-
+// console.log(lst[0]);

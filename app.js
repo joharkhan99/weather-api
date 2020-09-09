@@ -295,51 +295,51 @@ async function call() {
             $('.country-name').html(count.get(country));
             // console.log(res);
 
-            let res2 = await (await fetch(`https://community-open-weather-map.p.rapidapi.com/forecast?q=${ctiy}`
-            , {
-              "method": "GET",
-              "headers": {
-                "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-                "x-rapidapi-key": "5730203037msh02300bf052bc32bp160c31jsnc228e6a008bd"
-              }
-            }
-            )).json();
+//             let res2 = await (await fetch(`https://community-open-weather-map.p.rapidapi.com/forecast?q=${ctiy}`
+//             , {
+//               "method": "GET",
+//               "headers": {
+//                 "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
+//                 "x-rapidapi-key": "5730203037msh02300bf052bc32bp160c31jsnc228e6a008bd"
+//               }
+//             }
+//             )).json();
 
-      let futureWeather = res2.list;
-      // console.log(futureWeather);
-      futureWeather.forEach((val, indx) => {
-        let futureDate = val['dt_txt'].split(" ")[0];
-        let futureTime = val['dt_txt'].split(" ")[1];
-        let futureTemp = parseFloat(val['main']['temp']);
-        let futureDesp = val['weather'][0]['description'];
+//       let futureWeather = res2.list;
+//       // console.log(futureWeather);
+//       futureWeather.forEach((val, indx) => {
+//         let futureDate = val['dt_txt'].split(" ")[0];
+//         let futureTime = val['dt_txt'].split(" ")[1];
+//         let futureTemp = parseFloat(val['main']['temp']);
+//         let futureDesp = val['weather'][0]['description'];
       
-        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        let dayName = new Date(futureDate);
-        let futureDay = days[dayName.getDay()];
+//         var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+//         let dayName = new Date(futureDate);
+//         let futureDay = days[dayName.getDay()];
       
-        let futureConvToCel = futureTemp - 273.15;      //convert to kelvin
-        let futureConvToFar = (futureConvToCel * (9 / 5)) + 32;
+//         let futureConvToCel = futureTemp - 273.15;      //convert to kelvin
+//         let futureConvToFar = (futureConvToCel * (9 / 5)) + 32;
       
-        const markup = `<div class="card row">
-              <div class="card-content white-text">
-                <span class="future-time">Day: <span class="futureValues">${futureDay}</span>
-                <p>
-                Date: <span class="futureValues">${futureDate}</span></span>
-                </p>
-                <p>
-                Time: <span class="futureValues">${futureTime}</span></span>
-                </p>
-                <p class="future-temp">Temperature: <span class="future-cent"><span class="futureValues">${parseInt(futureConvToCel)}&deg;C/${parseInt(futureConvToFar)}&deg;F</span>
-                </p>
-                <p class="future-desp">Sky Description: <span class="futureValues">${futureDesp}</span>
-                </p>
-              </div>
-             </div>`
-        $('.cards-container').append(markup);
-      });
+//         const markup = `<div class="card row">
+//               <div class="card-content white-text">
+//                 <span class="future-time">Day: <span class="futureValues">${futureDay}</span>
+//                 <p>
+//                 Date: <span class="futureValues">${futureDate}</span></span>
+//                 </p>
+//                 <p>
+//                 Time: <span class="futureValues">${futureTime}</span></span>
+//                 </p>
+//                 <p class="future-temp">Temperature: <span class="future-cent"><span class="futureValues">${parseInt(futureConvToCel)}&deg;C/${parseInt(futureConvToFar)}&deg;F</span>
+//                 </p>
+//                 <p class="future-desp">Sky Description: <span class="futureValues">${futureDesp}</span>
+//                 </p>
+//               </div>
+//              </div>`
+//         $('.cards-container').append(markup);
+//       });
     }
     catch (error) {
-      $('.cards-container').append("<h5 style='color:red;text-align:center'>NOT RESPONDING</h5>");
+//       $('.cards-container').append("<h5 style='color:red;text-align:center'>NOT RESPONDING</h5>");
       console.log("error", error);
     };
   }

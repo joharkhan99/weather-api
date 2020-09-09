@@ -249,12 +249,6 @@ count.set("ZA", "South Africa");
 count.set("ZM", "Zambia");
 count.set("ZW", "Zimbabwe");
 
-//////////////////////////////////////////////////////////////
-//..............MAKING AJAX CALLS WITH FETCH FOR SOME DATA
-//kel to cel formula (kelvin - 273.15)
-//var temp=data['main']['temp'] temoerat
-//
-//$("input").css({"border-color":"rgb(235, 232, 232)",'box-shadow': 'none'});
 
 window.setTimeout(() => { }, 2000);
 
@@ -344,71 +338,3 @@ call(); //call the above func
 
 
 
-
-let lst = [
-  {
-    dt_txt: "2020-09-10 12:00:00",
-    main: { temp: 300.59 },
-    weather: [
-      { description: "clear sky is here" },
-      { main: "Clear" }
-    ]
-  },
-  {
-    dt_txt: "2020-09-11 21:00:00",
-    main: { temp: 300.59},
-    weather: [
-      { description: "dpesster clouds" },
-      { main: "dirt" }
-    ]
-  },
-  {
-    dt_txt: "2020-09-09 21:00:00",
-    main: { temp: 300.59 },
-    weather: [
-      { description: "may be raining" },
-      { main: "zameen" }
-    ]
-  },
-  {
-    dt_txt: "2020-09-09 21:00:00",
-    main: { temp: 300.59 },
-    weather: [
-      { description: "huge clouds" },
-      { main: "zameen" }
-    ]
-  }
-];
-
-// lst.forEach((val, indx) => {
-//   let futureDate = val['dt_txt'].split(" ")[0];
-//   let futureTime = val['dt_txt'].split(" ")[1];
-//   let futureTemp = parseFloat(val['main']['temp']);
-//   let futureDesp = val['weather'][0]['description'];
-
-//   var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-//   let dayName = new Date(futureDate);
-//   let futureDay = days[dayName.getDay()];
-
-//   let futureConvToCel = futureTemp - 273.15;      //convert to kelvin
-//   let futureConvToFar = (futureConvToCel * (9 / 5)) + 32;
-
-//   const markup = `<div class="card blue-grey darken-1">
-//         <div class="card-content white-text">
-//           <span class="future-time">Day: <span class="futureValues">${futureDay}</span>
-//           <p>
-//           Date: <span class="futureValues">${futureDate}</span></span>
-//           </p>
-//           <p>
-//           Time: <span class="futureValues">${futureTime}</span></span>
-//           </p>
-//           <p class="future-temp">Temperature: <span class="future-cent"><span class="futureValues">${parseInt(futureConvToCel)}&deg;C/${parseInt(futureConvToFar)}&deg;F</span>
-//           </p>
-//           <p class="future-desp">Description: <span class="futureValues">${futureDesp}</span>
-//           </p>
-//         </div>
-//        </div>`
-//   $('.cards-container').append(markup);
-// });
-
-console.log(lst[0]);
